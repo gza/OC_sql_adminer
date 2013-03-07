@@ -1,6 +1,9 @@
 <?php
 
+OCP\User::checkAdminUser();
+
 if ($_POST) {
+	OCP\JSON::callCheck();
         if(isset($_POST[$param])){
         	OC_Appconfig::setValue('sql_adminer', $param, $_POST[$param]);
 	}

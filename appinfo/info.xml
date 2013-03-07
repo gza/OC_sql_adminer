@@ -3,7 +3,7 @@
 	<id>sql_adminer</id>
 	<name>SQLAdminer</name>
 	<description>An integration of adminer, a webtool for SQL administration</description>
-	<version>1.1</version>
+	<version>1.2</version>
 	<licence>AGPL</licence>
 	<author>Guillaume ZITTA</author>
 	<require>4.9</require>

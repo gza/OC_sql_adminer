@@ -9,4 +9,5 @@ User Visibility, don't select All user until you know what you do (Major Securit
 		<option value="1">All users</option>
 	</select>
 	</fieldset>
+<input type="hidden" name="requesttoken" value="<?php echo $_['requesttoken'] ?>" id="requesttoken">
 </form>
