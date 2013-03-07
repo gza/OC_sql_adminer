@@ -9,8 +9,8 @@ if( !OCP\User::isLoggedIn()){
 
 OCP\App::setActiveNavigationEntry( 'adminer_index');
 $tmpl = new OCP\Template( 'sql_adminer', 'main', 'user' );
-//$tmpl->assign('srcpath',OC::$WEBROOT.'/apps/sql_adminer/adminer/adminer/plugin.php');
-$tmpl->assign('srcpath',OC_App::getAppWebPath('sql_adminer').'/wrapper.php');
+$tmpl->assign('srcpath',OC_App::getAppWebPath('sql_adminer').'/wrapper.php.txt');
+
 switch(OC_Config::getValue( "dbtype", "sqlite" )) {
 	case 'sqlite':
 		$queryString="sqlite=&db=".OC_Config::getValue( "datadirectory", OC::$SERVERROOT.'/data' ).'/'.OC_Config::getValue( "dbname", "owncloud" ).'.db&username='.OCP\USER::getUser();
