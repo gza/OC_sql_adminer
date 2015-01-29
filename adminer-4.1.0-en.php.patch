@@ -1,0 +1,15 @@
+--- adminer-4.1.0-en.php	2014-04-18 18:00:21.000000000 +0200
++++ adminer-4.1.0-en.phps	2015-01-29 22:28:20.669214775 +0100
+@@ -118,9 +118,9 @@
+ dump_csv($K){foreach($K
+ as$x=>$X){if(preg_match("~[\"\n,;\t]~",$X)||$X==="")$K[$x]='"'.str_replace('"','""',$X).'"';}echo
+ implode(($_POST["format"]=="csv"?",":($_POST["format"]=="tsv"?"\t":";")),$K)."\r\n";}function
+-apply_sql_function($q,$e){return($q?($q=="unixepoch"?"DATETIME($e, '$q')":($q=="count distinct"?"COUNT(DISTINCT ":strtoupper("$q("))."$e)"):$e);}function
+-get_temp_dir(){$J=ini_get("upload_tmp_dir");if(!$J){if(function_exists('sys_get_temp_dir'))$J=sys_get_temp_dir();else{$Dc=@tempnam("","");if(!$Dc)return
+-false;$J=dirname($Dc);unlink($Dc);}}return$J;}function
++apply_sql_function($q,$e){return($q?($q=="unixepoch"?"DATETIME($e, '$q')":($q=="count distinct"?"COUNT(DISTINCT ":strtoupper("$q("))."$e)"):$e);}
++if (!function_exists('get_temp_dir')) {function get_temp_dir(){$J=ini_get("upload_tmp_dir");if(!$J){if(function_exists('sys_get_temp_dir'))$J=sys_get_temp_dir();else{$Dc=@tempnam("","");if(!$Dc)return
++false;$J=dirname($Dc);unlink($Dc);}}return$J;}}function
+ password_file($yb){$Dc=get_temp_dir()."/adminer.key";$J=@file_get_contents($Dc);if($J||!$yb)return$J;$Nc=@fopen($Dc,"w");if($Nc){$J=rand_string();fwrite($Nc,$J);fclose($Nc);}return$J;}function
+ rand_string(){return
+ md5(uniqid(mt_rand(),true));}function

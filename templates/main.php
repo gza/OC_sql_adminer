@@ -1,4 +1,4 @@
-<iframe id="adminerFrame" name="adminer" width="100%" height="600px" src="<?php echo $_['srcpath']; ?>?<?php echo $_['queryString']; ?>"> </iframe>
+<iframe id="adminerFrame" name="adminer" width="100%" height="600px" src="<?php p($_['srcpath']); ?>?<?php p($_['queryString']); ?>"> </iframe>
 <script type="text/javascript">
                 function resizeFrame() {
                   var myWidth = 0, myHeight = 0, headerheight = 50;

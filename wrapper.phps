@@ -1,18 +1,24 @@
-<?php
+<?php 
+
+$_GET['db']='/var/data/owncloud/owncloud.db';
+$_GET['sqlite']='toto';
+$_GET['username']='gza';
+
+
 function adminer_object() {
     // required to run any plugin
-    include_once "./plugins/plugin.php";
-    
+    include_once __DIR__ . "/plugins/plugin.php";
+
     // autoloader
-    foreach (glob("plugins/*.php") as $filename) {
-        include_once "./$filename";
+    foreach (glob(__DIR__ . "/plugins/*.php") as $filename) {
+        include_once "$filename";
     }
     
     $plugins = array(
         // specify enabled plugins here
 	new AdminerFrames,
     );
-    
+
     /* It is possible to combine customization and plugins:
     class AdminerCustomization extends AdminerPlugin {
     }
@@ -21,7 +27,6 @@ function adminer_object() {
     
     return new AdminerPlugin($plugins);
 }
-
 // include original Adminer or Adminer Editor
-include "./adminer-3.6.3.php.txt";
+require __DIR__ . "/adminer-4.1.0-en.phps";
 ?>
